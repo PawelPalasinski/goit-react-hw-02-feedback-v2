@@ -1,4 +1,4 @@
-import { FeedbackOptionsV1 } from './FeedbackOptionsV1/FeedbackOptionsV1';
+import { FeedbackOptionsV2 } from './FeedbackOptionsV2/FeedbackOptionsV2';
 
 export const App = () => {
   return (
