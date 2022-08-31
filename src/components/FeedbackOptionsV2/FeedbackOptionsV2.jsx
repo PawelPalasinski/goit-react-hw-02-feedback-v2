@@ -9,6 +9,8 @@ export const FeedbackOptionsV2 = () => {
   const countVotes = () => good + neutral + bad;
   const positivePercentage = Math.round((good / countVotes()) * 100);
 
+  const statsValues = [["Good", good], ["Neutral", neutral], ["Bad", bad], ["Total: ", good+neutral+bad], ["Positive feedback", `${positivePercentage}%`]]
+
   return (
     <div className="vote-container">
       <h3 className="vote-container__title">Please leave feedback</h3>
@@ -40,14 +42,11 @@ export const FeedbackOptionsV2 = () => {
       {countVotes() !== 0 ? (
         <>
           <h3>Statistics</h3>
+          <p>test</p>
           <ul className="statistics">
-            <li className="statistics-values">Good: {good}</li>
-            <li className="statistics-values">Neutral: {neutral}</li>
-            <li className="statistics-values">Bad: {bad}</li>
-            <li className="statistics-values">Total: {countVotes()}</li>
-            <li className="statistics-values">
-              Positive feedback: {positivePercentage}%
-            </li>
+
+            {statsValues.map(([name, value]) => <li className="statistics-values">{name}: {value}</li>)}
+
           </ul>
         </>
       ) : (
